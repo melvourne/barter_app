@@ -1,1 +1,8 @@
-<h1> Home   </h1>
+<% @posts.each do |post| %>
+<h2> <%= post.title %> </h2>
+<p> <%= post.description %> </p>
+<p> <%= post.suburb %> </p>
+
+<% end %>
+
+<%= link_to 'Create a Post', new_post_path %>
