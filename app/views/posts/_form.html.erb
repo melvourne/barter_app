@@ -1,0 +1,8 @@
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, placeholder: 'Enter a brief description and what are you seeking for barter' %>
+  <%= f.input :suburb %>
+  
+  <%= f.button :submit %>
+
+<% end %>
