@@ -1,13 +1,21 @@
+
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= submit_tag "Barter", :name => nil %>
+
+    <% end %>
+
+
+<% if @posts.blank? %>
+  <h4> <%= params[:search] %> returned no results </h4>
+  <% end %>
+
+
 <% @posts.each do |post| %>
-<%= link_to (image_tag post.photo.url(:medium)), post %> 
+<h2> <%= link_to (image_tag post.photo.url(:thumb)), post %> </h2>
 <h2> <%= link_to (post.title), post %> </h2>
-<p> <%= post.description %> </p>
-<p> <%= post.suburb %> </p>
+<p> Posted by <%= post.user.name %> in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
 <p> <%= post.comments.count %> Comments </p>
 
 <% end %>
-
-
-
-<%= link_to 'Create a Post', new_post_path %>
 

@@ -1,13 +1,13 @@
+
 <%= image_tag @post.photo.url(:medium) %>
 <h1> <%= @post.title %> </h1>
 <p> <%= @post.description %> </p>
-<p> <%= @post.suburb %> </p>
-<p> <%= @post.user.name %> </p>
+<p> Posted by <%= @post.user.name %> in <%= @post.suburb %> about <%= time_ago_in_words(@post.created_at) %> ago </p>
+
 
 <h2> <%= comment_count= pluralize(@post.comments.count, "Comment") %>   </h2>
   <% @comments.each do |comment| %>
-    <p> <%= username= comment.user.name %> </p>
-    <p> <%= content= comment.content %> </p>
+    <p> <%= username= comment.user.name %> : <%= content= comment.content %> </p>
 
 <% end %>
 
