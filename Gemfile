@@ -7,7 +7,7 @@ end
 
 
 gem 'rails', '~> 5.0.2'
-gem 'sqlite3'
+gem 'pg', '0.18.1', group: :production
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -35,5 +35,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
-gem 'materialize-sass'
+gem 'rails_12factor', group: :production
 
