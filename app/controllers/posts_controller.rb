@@ -46,6 +46,10 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def userposts
+    @posts = current_user.posts
+  end
+
   private
   
   def find_post

@@ -1,21 +1,41 @@
-
-    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-    <%= submit_tag "Barter", :name => nil %>
-
-    <% end %>
-
+<div class="jumbotron">
+  <div class="container">
+    <h1>Barter</h1>
+    <p>
+      the new old medium of exchange
+    </p>
+    <p><a class="btn btn-primary" href="#posts" role="button">Let's go!</a></p>
+  </div>
+</div>
 
 <% if @posts.blank? %>
   <h4> <%= params[:search] %> returned no results </h4>
-  <% end %>
-
-
-<% @posts.each do |post| %>
-<h2> <%= link_to (image_tag post.photo.url(:thumb)), post %> </h2>
-<h2> <%= link_to (post.title), post %> </h2>
-<p> Posted by <%= post.user.name %> in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
-<p> <%= post.comments.count %> Comments </p>
-
 <% end %>
 
+
+<section id="posts">
+  <% @posts.each do |post| %>
+   <div class="row">
+    <div class="container">
+      <div class="thumbnail">
+        <img class="img-rounded">
+         <%= link_to (image_tag post.photo.url(:medium)), post %>
+        </img>
+         <div class="caption">
+          <h3>
+          <%= link_to (post.title), post %>
+          </h3>
+          <p>
+          <%= post.description %> <br>
+          <%= comment_count= pluralize(post.comments.count, "Response") %>
+          </p>
+         <p> <%= link_to 'Barter', post_path(post), :class => 'btn btn-primary', :role => 'button' %> </p>
+       </div>
+     </div>
+   </div>
+</section>
+ <% end %>
+
+
+
+        

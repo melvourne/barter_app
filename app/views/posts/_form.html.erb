@@ -1,9 +1,12 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :photo %>
-  <%= f.input :title %>
-  <%= f.input :description, placeholder: 'Enter a brief description and what are you seeking for barter' %>
-  <%= f.input :suburb %>
-  
-  <%= f.button :submit %>
+<form class="form-horizontal">
+  <div class="form-group">
+    <%= simple_form_for @post do |f| %>
+      <%= f.input :photo, multiple: true %>
+      <%= f.input :title %>
+      <%= f.input :description, placeholder: 'Enter a brief description and what are you seeking for barter' %>
+      <%= f.input :suburb %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</form>
 
-<% end %>

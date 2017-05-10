@@ -1,0 +1,15 @@
+<h2>Here are your posts</h2>
+<% @posts.each do |post| %>
+<h2> <%= link_to (image_tag post.photo.url(:medium)), post %> </h2>
+<h2> <%= post.title %> </h2>
+<p> <%= post.description %> </p>
+<p> Posted in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
+<p> <%= post.comments.count %> Comments </p>
+
+
+
+<%= link_to 'Edit', edit_post_path(post) %>
+<%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: "Are you sure" } %>
+
+<% end %>
+
