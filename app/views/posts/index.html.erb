@@ -5,46 +5,6 @@
       a new old medium of exchange
     </p>
     <p><a class="btn btn-primary" href="#posts" role="button">Let's go!</a></p>
-  </div>
-</div>
-<% if @posts.blank? %>
-<h4> <%= params[:search] %> returned no results </h4>
-<% end %>
-<section id="posts">
-  <div class="container">
-    <div class="row">
-      <% @posts.each do |post| %>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <img> <%= link_to (image_tag post.photo.url(:medium)), post %> </img>
-          <h3>  <%= link_to (post.title), post %> </h3>
-          <h4> <%= post.description %> </h4>
-          <h4> <%= comment_count= pluralize(post.comments.count, "Response") %> </h4>
-          <p>
-            <%= link_to 'Barter', post_path(post), :class => 'btn btn-primary', :role => 'button' %> <br>
-            <h3> $<%= post.price %> </h3>
-            <script src="https://checkout.stripe.com/checkout.js"></script>
-          <form action="/charge" method="POST">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_test_i2txBI2jUjSQIMoqFz3Fo326"
-              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-              data-name="$50"
-              data-description="Couch"
-              data-amount="5000"
-              data-billingAddress="true"
-              data-shippingAddress="true"></script>
-          </form>
-          </p>
-          <p> Posted in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</section>
-<section class="subscribe">
-  <div class="container">
     <h3>Don't want to miss out?</h3>
     <h4>
     Subscribe to our mailing list if you want to be notified of new posts.
@@ -57,7 +17,45 @@
     <input type="text" name="message" class="subscribe-input" placeholder="Ask me anything" autofocus> 
     <button type="submit" class="subscribe-submit">Subscribe</button>
   </form>
+  </div>
+</div>
+<% if @posts.blank? %>
+<h4> <%= params[:search] %> returned no results </h4>
+<% end %>
+<div class="container">
+<section id="posts">
+  <% @posts.each do |post| %>
+   <div class="row">
+      <div class="thumbnail">
+        <img class="img-rounded">
+          <img> <%= link_to (image_tag post.photo.url(:medium)), post %> </img>
+          <h3>  <%= link_to (post.title), post %> </h3>
+          <h4> <%= post.description %> </h4>
+          <h4> <%= comment_count= pluralize(post.comments.count, "Response") %> </h4>
+          <p>
+            <%= link_to 'Barter', post_path(post), :class => 'btn btn-primary', :role => 'button' %> <br>
+            <h3> $<%= post.price %> </h3>
+            <script src="https://checkout.stripe.com/checkout.js"></script>
+          <form action="https://giphy.com/gifs/mqd0IiCu4iBVK/html5">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_3xvc7dFgWyWyl21y0HjCn97v"
+              data-image="https://image.freepik.com/free-icon/b-logo-square_318-11144.jpg"
+              data-name= <%= post.title %>
+              data-description= $<%= post.price %>
+              data-amount= $<%= post.price %>
+              data-billingAddress="true"
+              data-shippingAddress="true"></script>
+          </form>
+          </p>
+          <p> Posted in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </section>
+
 <footer class="footer">
   <div class="container">
     <p> &reg Melvin Arriola 2017</p>
