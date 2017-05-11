@@ -25,6 +25,7 @@ App where in users can post ads for things or services they want to swap with wi
 Sign in/Sign up > Set up profile > Create posts > Start bartering > Buy > Process payment > Repeat
 
 ## Wireframe
+<img width="1084" alt="screen shot 2017-05-11 at 11 11 00 pm" src="https://cloud.githubusercontent.com/assets/18462926/25951248/6ec06b64-36a0-11e7-9558-f1fbfa72406f.png">
 
 
 ## ERD
