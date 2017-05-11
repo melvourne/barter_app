@@ -28,6 +28,8 @@ Sign in/Sign up > Set up profile > Create posts > Start bartering > Buy > Proces
 
 
 ## ERD
+<img width="726" alt="screen shot 2017-05-06 at 10 28 18 pm" src="https://cloud.githubusercontent.com/assets/18462926/25933586/28a4e32a-365b-11e7-80b3-ba21ddf75f33.png">
+
 
 ## Project Plan and Estimation
 As long as I have something to be submitted by the deadline :(
