@@ -4,7 +4,7 @@
 <h2> <%= post.title %> </h2>
 <p> <%= post.description %> </p>
 <p> Posted in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
-<p> <%= post.comments.count %> Comments </p>
+<p> <%= comment_count= pluralize(post.comments.count, "Response") %> </p>
 
 
 

@@ -1,10 +1,5 @@
-<form class="form-horizontal">
-  <div class="form-group">
-    <%= simple_form_for([@post, @post.comments.build]) do |f| %>
-     <%= f.input :content, label: false %>
-     <%= f.submit 'Send'  %>
-    <% end %>
-  </div>
-</form>
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+  <%= f.input :content, label: false %>
+  <%= f.button :submit, 'Send', class: "button" %>
 
-
+<% end %>

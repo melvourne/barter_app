@@ -2,6 +2,7 @@
 <%= image_tag @post.photo.url(:medium) %>
 <h1> <%= @post.title %> </h1>
 <p> <%= @post.description %> </p>
+<p> $<%= @post.price %> </p>
 <p> Posted by <%= @post.user.name %> in <%= @post.suburb %> about <%= time_ago_in_words(@post.created_at) %> ago </p>
 
 
