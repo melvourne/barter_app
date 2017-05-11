@@ -7,6 +7,7 @@ html, body {
     font-family: 'Roboto Condensed', sans-serif;
     background-color: #ecf0f1;
     text-align: center;
+    height: 100%;
 
     
 }
@@ -21,10 +22,13 @@ html, body {
     background: #ecf0f1;
 }
 
-.clearfix {
-    display: block;
+#posts  {
+    height: 100%;
+     margin-bottom: -50px;
 }
 
-
-
+.footer {
+    height: 50px;
+    padding: 10px;
+}
 

@@ -7,34 +7,59 @@
     <p><a class="btn btn-primary" href="#posts" role="button">Let's go!</a></p>
   </div>
 </div>
-
 <% if @posts.blank? %>
-  <h4> <%= params[:search] %> returned no results </h4>
+<h4> <%= params[:search] %> returned no results </h4>
 <% end %>
-
-
 <section id="posts">
- <div class="container">
-   <div class="row">
-    <% @posts.each do |post| %>
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |post| %>
       <div class="col-md-4">
-      <div class="thumbnail">
-        <img> <%= link_to (image_tag post.photo.url(:medium)), post %> </img>
+        <div class="thumbnail">
+          <img> <%= link_to (image_tag post.photo.url(:medium)), post %> </img>
           <h3>  <%= link_to (post.title), post %> </h3>
-          <p> <%= post.description %> <br>
-           $<%= post.price %> <br>
-          <%= comment_count= pluralize(post.comments.count, "Response") %> </p>
-          <p> <%= link_to 'Barter', post_path(post), :class => 'btn btn-primary', :role => 'button' %> 
-          <%= link_to 'Buy', new_charge_path(post), :class => 'btn btn-primary', :role => 'button' %> </p>
-         <p> Posted in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
-         </div>
+          <h4> <%= post.description %> </h4>
+          <h4> <%= comment_count= pluralize(post.comments.count, "Response") %> </h4>
+          <p>
+            <%= link_to 'Barter', post_path(post), :class => 'btn btn-primary', :role => 'button' %> <br>
+            <h3> $<%= post.price %> </h3>
+            <script src="https://checkout.stripe.com/checkout.js"></script>
+          <form action="/charge" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_i2txBI2jUjSQIMoqFz3Fo326"
+              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+              data-name="$50"
+              data-description="Couch"
+              data-amount="5000"
+              data-billingAddress="true"
+              data-shippingAddress="true"></script>
+          </form>
+          </p>
+          <p> Posted in <%= post.suburb %> about <%= time_ago_in_words(post.created_at) %> ago </p>
         </div>
-<% end %>
-
       </div>
-   </div>
- </section>
-
-
-
-        
+      <% end %>
+    </div>
+  </div>
+</section>
+<section class="subscribe">
+  <div class="container">
+    <h3>Don't want to miss out?</h3>
+    <h4>
+    Subscribe to our mailing list if you want to be notified of new posts.
+    <h4>
+  </div>
+  <form action="https://formspree.io/melvinarriola@gmail.com"
+    method="POST">
+    <input type="email" name="email" class="subscribe-input" placeholder="Email address" autofocus>
+    <h4>Got questions or suggestions? </h4>
+    <input type="text" name="message" class="subscribe-input" placeholder="Ask me anything" autofocus> 
+    <button type="submit" class="subscribe-submit">Subscribe</button>
+  </form>
+</section>
+<footer class="footer">
+  <div class="container">
+    <p> &reg Melvin Arriola 2017</p>
+  </div>
+</footer>
