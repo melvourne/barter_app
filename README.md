@@ -11,15 +11,15 @@ Anyone who wants to trade or sell stuff
 People who just disposes things easily without realising the worth of those to other people
 
 ## User Stories
-As a swapper, I want to sell stuffs I dont use anymore
-As a swapper, I want to trade my unused stuff to anything I find interesting or useful
-As a swapper, I want to offer services e.g home repairs, gardening etc. in exchange of things I need
-As a seller or swapper, I want to have the option to be offered cash on top of the swap offers
-As a seller or swapper, I want to have the option to be offered cash on top of the swap offers
-As a user, I want to search for things I can swap my stuff with
-As a user, I want to search for things I can swap my stuff with
-As a user, I want to search for things I can swap my stuff with
-As a user, I want to search for things I can swap my stuff with
+###As a swapper, I want to sell stuffs I dont use anymore
+###As a swapper, I want to trade my unused stuff to anything I find interesting or useful
+###As a swapper, I want to offer services e.g home repairs, gardening etc. in exchange of things I need
+###As a seller or swapper, I want to have the option to be offered cash on top of the swap offers
+###As a seller or swapper, I want to have the option to be offered cash on top of the swap offers
+###As a user, I want to search for things I can swap my stuff with
+###As a user, I want to search for things I can swap my stuff with
+###As a user, I want to search for things I can swap my stuff with
+###As a user, I want to search for things I can swap my stuff with
 
 ## Workflow Diagram
 Sign in/Sign up > Set up profile > Create posts > Start bartering > Buy > Process payment > Repeat
