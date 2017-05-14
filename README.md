@@ -34,18 +34,27 @@ Sign in/Sign up > Set up profile > Create posts > Start bartering > Buy > Proces
 
 
 ## Project Plan and Estimation
-As long as I have something to be submitted by the deadline :(
+- First week : Planning and Designing
+- Second week : Coding
+No concrete timeline. I want to do as much as I can before the deadline.
 
 ## Gems and Tools
 - Devise - user authorisation
 - Paperclip - image uploading
-- Stripe - payment processing (kind of!) - I want to use braintree initially
+- Stripe - payment processing - I want to use braintree initially
 - Freeform - subscription mailing
+- Bootstrap 
 
 ## Issues
 - Heaps!!!
 - Used sqlite3 instead of postgresql in development
 - Spent enormous time trying to get braintree working but gave up
+
+## Future Features
+- Filter by categories
+- User rating and feedback
+- Direct messaging
+
 
 
 
